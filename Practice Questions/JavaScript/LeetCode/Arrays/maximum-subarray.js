@@ -47,16 +47,13 @@ return Math.max(...nums)
 //8 - [-2,1,-2,4, 3,5,6,1, 5] //Return Max which is 6
 
 */
-
 var maxSubArray = function(nums) {
-    if(nums.length < 2) return nums;
-
-    for(let x=1; x<nums.length; x++)
-    {
-        nums[x] = Math.max(nums[x], nums[x] + nums[x-1]);
-
-        console.log(nums);
-
-        return Math.max(...nums)
+    if(nums.length < 2){
+        return nums;
     }
+    for(let i = 1; i < nums.length; i++){
+        nums[i] = Math.max(nums[i], nums[i] + nums[i - 1])
+    }
+    return Math.max(...nums)
+
 };
