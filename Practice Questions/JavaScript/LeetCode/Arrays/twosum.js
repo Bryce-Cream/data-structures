@@ -31,6 +31,7 @@ var twoSum = function(nums, target)
     return answers;
 
     //Below is the solution for involving a map / hashMap which will be O(n)
+    /*
     let map = new Map();
 
     for(let x=0; x<nums.length; x++)
@@ -42,6 +43,6 @@ var twoSum = function(nums, target)
 
         map.set(nums[x], x);
     }
-
+    */
     //Optimizing would be using our own map Object {} instead of the pre-made object Map I think
 };
