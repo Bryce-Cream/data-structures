@@ -9,7 +9,32 @@ Note that you must do this in-place without making a copy of the array.
  */
 var moveZeroes = function(nums) {
 
+    //Slightly more optimal
+    //Iterate over array, counting the zeroes
+    //moving each non-zero element toward the front x-zeroCount or something
+    // then add in the zeros at the end
 
+    let zeroCount = 0;
+
+    for(let x =0; x<nums.length; x++)
+    {
+        if(nums[x] !== 0)
+            nums[x-zeroCount] = nums[x];
+        else
+            zeroCount++;
+    }
+
+    for(let x = nums.length - zeroCount; x<nums.length; x++)
+    {
+        nums[x] = 0;
+    }
+
+
+
+
+    //Basic Solution.
+    //If 0, swap it.
+    /*
     let left = 0;
     let right = 0;
 
@@ -26,5 +51,5 @@ var moveZeroes = function(nums) {
         left++;
 
     }
-    
+    */
 };
