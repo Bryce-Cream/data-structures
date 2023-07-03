@@ -10,6 +10,7 @@
 //Naive basic approach
 //Nested for loop
 
+
 function firstReccuringCharacter(input)
 {
     for(let x=0; x<input.length; x++)
@@ -27,4 +28,17 @@ function firstReccuringCharacter(input)
 
 // O(n^2)
 
-firstReccuringCharacter([2,5,1,2,3,5,1,2,3])
+function firstReccuringCharacter2(input)
+{
+    let map = {};
+    for(let x=0; x<input.length; x++)
+    {
+        if(map[input[x]] !== undefined)
+            return input[x];
+        else
+            map[input[x]] =  x;
+    }
+    return undefined;
+} // O(n)
+
+firstReccuringCharacter2([2,5,1,2,3,5,1,2,3])
